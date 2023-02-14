@@ -1,11 +1,18 @@
+import 'package:aluraapp/Screens/form_screen.dart';
+import 'package:aluraapp/Screens/initial_screen.dart';
 import 'package:flutter/material.dart';
 
+
+
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+
+  
+  
 
   @override
   Widget build(BuildContext context) {
@@ -14,104 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Tarefas'),
-        ),
-        body: ListView(
-          children: [
-            Task('Meditação Matinal'),
-            Task("desjejum"),
-            Task('Ir trabalhar'),
-            Task('Ir trabalhar'),
-            Task('Ir trabalhar'),
-            Task('Ir trabalhar'),
-            Task('Ir trabalhar'),
-            Task('Ir trabalhar'),
-          ],
-        ),
-        floatingActionButton: FloatingActionButton(onPressed: () {}),
-      ),
-    );
-  }
-}
-
-class Task extends StatefulWidget {
-  final nome;
-
-  const Task(this.nome, {Key? key}) : super(key: key);
-
-  @override
-  State<Task> createState() => _TaskState();
-}
-
-class _TaskState extends State<Task> {
-  int nivel = 0;
-  @override
-  Widget build(BuildContext context) {
-    
-
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        child: Stack(children: [
-          Container(
-            color: Colors.blue,
-            height: 140,
-          ),
-          Column(
-            children: [
-              Container(
-                color: Colors.white,
-                height: 100,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      color: Colors.black26,
-                      width: 72,
-                      height: 100,
-                    ),
-                    Container(
-                      width: 200,
-                      child: Text(
-                        widget.nome,
-                        style: TextStyle(
-                            fontSize: 24,
-                            overflow: TextOverflow.ellipsis,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    ElevatedButton(
-                        onPressed: () { setState(() {
-                          nivel++;
-                        });
-                          
-                        },
-                        child: Icon(Icons.arrow_drop_up))
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(child: LinearProgressIndicator(color: Colors.white, value: nivel/10,),width: 200,),
-                    ),
-                    Text(
-                      'Nivel:$nivel',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          )
-        ]),
-      ),
+      home: const FormScreen()
     );
   }
 }
