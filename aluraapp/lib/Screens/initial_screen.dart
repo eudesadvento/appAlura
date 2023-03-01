@@ -20,18 +20,7 @@ class _initialScreenState extends State<initialScreen> {
       ),
       body: ListView(
         children: [
-          Task(
-              'Meditação Matinal',
-              'assets/imagens/meditar.jpg',
-              3),
-          Task(
-              'desjejum',
-              'assets/imagens/comer.jpg',
-              1),
-              Task(
-              'Trabalho',
-              'assets/imagens/trabalho.webp',
-              1),
+         
          
               SizedBox(height: 80,)
       ],

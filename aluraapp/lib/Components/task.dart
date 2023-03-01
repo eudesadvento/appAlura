@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'difficulty.dart';
 
 class Task extends StatefulWidget {
-  final nome;
-  final foto;
-  final dificuldade;
+  final String nome;
+  final String foto;
+  final int dificuldade;
 
   Task( this.nome, this.foto, this.dificuldade, {Key? key}) : super(key: key);
 
